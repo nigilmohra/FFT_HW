@@ -12,10 +12,6 @@ x[n] = \frac{1}{N}\sum_{k=0}^{N-1} X[k] \, e^{+j\frac{2\pi}{N}kn}, \qquad n = 0,
 $$
 
 $$
-W_N^{k} = e^{-j\frac{2\pi}{N}k}
-$$
-
-$$
 x[n] = \text{IFFT}(X[k]) = \frac{1}{N}\ \overline{\text{FFT}(X[k])}
 $$
 
