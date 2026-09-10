@@ -14,5 +14,5 @@ W_N^{k} = e^{-j\frac{2\pi}{N}k}
 $$
 
 $$
-x[n] = \text{IFFT}(X[k]) = \frac{1}{N}\ \overline{\text{FFT(X[k])}}
+x[n] = \text{IFFT}(X[k]) = \frac{1}{N}\ \overline{\text{FFT}(X[k])}
 $$
