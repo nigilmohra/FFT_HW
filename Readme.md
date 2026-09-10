@@ -14,6 +14,6 @@ W_N^{k} = e^{-j\frac{2\pi}{N}k}
 $$
 
 $$
-X[k] = x[n] = \text{IFFT}(X[k]) = \frac{1}{N}\,\overline{\text{FFT}\!\left(\overline{X[k]}\right)}
+X[k] = \sum_{n=0}^{N/2-1} x[2n]\, W_N^{2nk} \;+\; W_N^{k}\sum_{n=0}^{N/2-1} x[2n+1]\, W_N^{2nk} \;=\; E[k] + W_N^{k}\,O[k]
 \tag{1}
 $$
