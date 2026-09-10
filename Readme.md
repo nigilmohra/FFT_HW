@@ -19,4 +19,4 @@ $$
 x[n] = \text{IFFT}(X[k]) = \frac{1}{N}\ \overline{\text{FFT}(X[k])}
 $$
 
-**This work was carried out as part of my internship at IIT Delhi under the guidance of Prof. Kaushik Saha (EE) and Prof. Rakesh Kumar Palani (EE)**.
+**This work was carried out as part of my internship at the Indian Institute of Technology Delhi (IIT Delhi), under the guidance and supervision of Prof. Kaushik Saha (Department of Electrical Engineering) and Prof. Rakesh Kumar Palani (Department of Electrical Engineering)**.
