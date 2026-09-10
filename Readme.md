@@ -16,7 +16,8 @@ W_N^{k} = e^{-j\frac{2\pi}{N}k}
 $$
 
 $$
-x[n] = \text{IFFT}(X[k]) = \frac{1}{N}\ \overline{\text{FFT}(X[k])}
+x[n] = \operatorname{IFFT}\{X[k]\}
+= \frac{1}{N}\overline{\operatorname{FFT}\{\overline{X[k]}\}}
 $$
 
 **This work was carried out as part of my internship at the Indian Institute of Technology Delhi (IIT Delhi), under the guidance and supervision of Prof. Kaushik Saha (Department of Electrical Engineering) and Prof. Rakesh Kumar Palani (Department of Electrical Engineering)**.
