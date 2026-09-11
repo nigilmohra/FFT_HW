@@ -29,7 +29,7 @@ int passCountIFFT, failCountIFFT;
 int count_i;
 
 // Test Vectors
-cplx inVec        [NUM_VEC][N];
+cplx inVec         [NUM_VEC][N];
 cplx expFFTOut     [NUM_VEC][N];
 cplx expIFFTOut    [NUM_VEC][N];
 
@@ -59,7 +59,7 @@ static void loadVectors() {
     }
 }
 
-static const double TOL = 5.0;  // LSB tolerance
+static const double TOL = 5.0;  // LSB Tolerance
 
 // Run FFT Vector
 static void runVectorFFT(int idx) {
