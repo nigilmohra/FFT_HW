@@ -34,7 +34,7 @@ assign outReal_Y = (MODE == `IFFT) ? {1'b0, (diffReal >>> 1)} : {1'b0, diffReal}
 assign outImag_Y = (MODE == `IFFT) ? {1'b0, (diffImag >>> 1)} : {1'b0, diffImag};
 endmodule
 
-// Sub-Module : Buttterfly with W1 and W3 Twiddle Operations
+// Sub-Module : Butterfly with W1 and W3 Twiddle Operations
 module bflyOpW13 (
     input wire MODE,
     input wire TWIDDLE,
