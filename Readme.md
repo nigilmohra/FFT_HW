@@ -15,6 +15,12 @@ $$
 x[n] = \text{IFFT}(X[k]) = \frac{1}{N}\ \overline{\text{FFT}(X[k])}
 $$
 
+To run the program, use the following command.
+```
+verilator --cc --exe --build -Wno-fatal --top-module CombinedFFT16b CombinedFFT16b.v CombinedFFT16b_tb.cpp -o sim
+./obj_dir/sim
+```
+
 |<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/d5cb210b-9f1b-45f8-a73b-98bb124b2203" />|
 |:------:|
 | _Figure 1. Successful Execution of 8-PPT Combined Forward and Inverse FFT Using Verilator_ |
