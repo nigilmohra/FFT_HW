@@ -17,7 +17,9 @@ $$
 
 To run the program, use the following command.
 ```Bash
+# Compile
 verilator --cc --exe --build -Wno-fatal --top-module CombinedFFT16b CombinedFFT16b.v CombinedFFT16b_tb.cpp -o sim
+# Run
 ./obj_dir/sim
 ```
 
