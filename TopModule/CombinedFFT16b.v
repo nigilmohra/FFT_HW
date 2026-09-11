@@ -159,7 +159,7 @@ wire signed [17:00] wire_stg3_06_re, wire_stg3_06_im;
 wire signed [17:00] wire_stg3_07_re, wire_stg3_07_im;
 
 // Input 
-// Conjugate for IFFT
+// Conjugate for IFFT 
 wire signed [15:0] cnjImagIn_00 = -imagIn_00;
 wire signed [15:0] cnjImagIn_01 = -imagIn_01;
 wire signed [15:0] cnjImagIn_02 = -imagIn_02;
@@ -169,6 +169,7 @@ wire signed [15:0] cnjImagIn_05 = -imagIn_05;
 wire signed [15:0] cnjImagIn_06 = -imagIn_06;
 wire signed [15:0] cnjImagIn_07 = -imagIn_07;
 
+// Input Assignment with Sign Extension
 assign wire_stg0_00_re = {{2{realIn_00[15]}}, realIn_00}; assign wire_stg0_00_im = (MODE == `IFFT) ? {{2{cnjImagIn_00[15]}}, cnjImagIn_00} : {{2{imagIn_00[15]}}, imagIn_00};
 assign wire_stg0_01_re = {{2{realIn_01[15]}}, realIn_01}; assign wire_stg0_01_im = (MODE == `IFFT) ? {{2{cnjImagIn_01[15]}}, cnjImagIn_01} : {{2{imagIn_01[15]}}, imagIn_01};
 assign wire_stg0_02_re = {{2{realIn_02[15]}}, realIn_02}; assign wire_stg0_02_im = (MODE == `IFFT) ? {{2{cnjImagIn_02[15]}}, cnjImagIn_02} : {{2{imagIn_02[15]}}, imagIn_02};
