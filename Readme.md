@@ -15,13 +15,7 @@ $$
 x[n] = \text{IFFT}(X[k]) = \frac{1}{N}\ \overline{\text{FFT}(X[k])}
 $$
 
-The design has a tolerance of up to 5 LSB. The maximum error observed was approximately 2.5 - 2.6 LSB across 100 test cases for both FFT and IFFT. To run the program, use the following command.
-```Bash
-# Compile
-verilator --cc --exe --build -Wno-fatal --top-module CombinedFFT16b CombinedFFT16b.v CombinedFFT16b_tb.cpp -o sim
-# Run
-./obj_dir/sim
-```
+The design has a tolerance of up to 5 LSB. The maximum error observed was approximately 2.5 - 2.6 LSB across 100 test cases for both FFT and IFFT. 
 
 |<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/ed58bb76-5837-4b96-a5e5-e2b29689588b" />|
 |:------:|
