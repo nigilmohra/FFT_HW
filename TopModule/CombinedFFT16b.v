@@ -30,8 +30,8 @@ assign diffImag = inImag_A - inImag_B;
 // Divide by 2
 assign outReal_X = (MODE == `IFFT) ? (sumReal  >>> 1) : sumReal;
 assign outImag_X = (MODE == `IFFT) ? (sumImag  >>> 1) : sumImag;
-assign outReal_Y = (MODE == `IFFT) ? (diffReal >>> 1) : diffReal;
-assign outImag_Y = (MODE == `IFFT) ? (diffImag >>> 1) : diffImag;
+assign outReal_Y = (MODE == `IFFT) ? (diffReal  >>> 1) : diffReal;
+assign outImag_Y = (MODE == `IFFT) ? (diffImag  >>> 1) : diffImag;
 endmodule
 
 // Sub-Module : Butterfly with W1 and W3 Twiddle Operations
@@ -89,7 +89,7 @@ assign wire_shift02 = dataIn >>> 2;
 assign wire_shift03 = dataIn >>> 3;
 assign wire_shift05 = dataIn >>> 5;
 assign wire_shift07 = dataIn >>> 7;
-assign wire_shift13 = (dataIn[12] == 1'b0) ? 15'sh0000 : (dataIn >>> 13);
+assign wire_shift13 = (dataIn[12] == 1'b0) ? 18'sh0000 : (dataIn >>> 13);
 
 assign dataOut = (dataIn + wire_shift02 + wire_shift03 + wire_shift05 + wire_shift07 + wire_shift13) >>> 1;
 endmodule
@@ -159,14 +159,24 @@ wire signed [17:00] wire_stg3_06_re, wire_stg3_06_im;
 wire signed [17:00] wire_stg3_07_re, wire_stg3_07_im;
 
 // Input 
-assign wire_stg0_00_re = realIn_00;  assign wire_stg0_00_im = (MODE == `IFFT) ? -imagIn_00 : imagIn_00;
-assign wire_stg0_01_re = realIn_01;  assign wire_stg0_01_im = (MODE == `IFFT) ? -imagIn_01 : imagIn_01;
-assign wire_stg0_02_re = realIn_02;  assign wire_stg0_02_im = (MODE == `IFFT) ? -imagIn_02 : imagIn_02;
-assign wire_stg0_03_re = realIn_03;  assign wire_stg0_03_im = (MODE == `IFFT) ? -imagIn_03 : imagIn_03;
-assign wire_stg0_04_re = realIn_04;  assign wire_stg0_04_im = (MODE == `IFFT) ? -imagIn_04 : imagIn_04;
-assign wire_stg0_05_re = realIn_05;  assign wire_stg0_05_im = (MODE == `IFFT) ? -imagIn_05 : imagIn_05;
-assign wire_stg0_06_re = realIn_06;  assign wire_stg0_06_im = (MODE == `IFFT) ? -imagIn_06 : imagIn_06;
-assign wire_stg0_07_re = realIn_07;  assign wire_stg0_07_im = (MODE == `IFFT) ? -imagIn_07 : imagIn_07;
+// Conjugate for IFFT
+wire signed [15:0] cnjImagIn_00 = -imagIn_00;
+wire signed [15:0] cnjImagIn_01 = -imagIn_01;
+wire signed [15:0] cnjImagIn_02 = -imagIn_02;
+wire signed [15:0] cnjImagIn_03 = -imagIn_03;
+wire signed [15:0] cnjImagIn_04 = -imagIn_04;
+wire signed [15:0] cnjImagIn_05 = -imagIn_05;
+wire signed [15:0] cnjImagIn_06 = -imagIn_06;
+wire signed [15:0] cnjImagIn_07 = -imagIn_07;
+
+assign wire_stg0_00_re = {{2{realIn_00[15]}}, realIn_00}; assign wire_stg0_00_im = (MODE == `IFFT) ? {{2{cnjImagIn_00[15]}}, cnjImagIn_00} : {{2{imagIn_00[15]}}, imagIn_00};
+assign wire_stg0_01_re = {{2{realIn_01[15]}}, realIn_01}; assign wire_stg0_01_im = (MODE == `IFFT) ? {{2{cnjImagIn_01[15]}}, cnjImagIn_01} : {{2{imagIn_01[15]}}, imagIn_01};
+assign wire_stg0_02_re = {{2{realIn_02[15]}}, realIn_02}; assign wire_stg0_02_im = (MODE == `IFFT) ? {{2{cnjImagIn_02[15]}}, cnjImagIn_02} : {{2{imagIn_02[15]}}, imagIn_02};
+assign wire_stg0_03_re = {{2{realIn_03[15]}}, realIn_03}; assign wire_stg0_03_im = (MODE == `IFFT) ? {{2{cnjImagIn_03[15]}}, cnjImagIn_03} : {{2{imagIn_03[15]}}, imagIn_03};
+assign wire_stg0_04_re = {{2{realIn_04[15]}}, realIn_04}; assign wire_stg0_04_im = (MODE == `IFFT) ? {{2{cnjImagIn_04[15]}}, cnjImagIn_04} : {{2{imagIn_04[15]}}, imagIn_04};
+assign wire_stg0_05_re = {{2{realIn_05[15]}}, realIn_05}; assign wire_stg0_05_im = (MODE == `IFFT) ? {{2{cnjImagIn_05[15]}}, cnjImagIn_05} : {{2{imagIn_05[15]}}, imagIn_05};
+assign wire_stg0_06_re = {{2{realIn_06[15]}}, realIn_06}; assign wire_stg0_06_im = (MODE == `IFFT) ? {{2{cnjImagIn_06[15]}}, cnjImagIn_06} : {{2{imagIn_06[15]}}, imagIn_06};
+assign wire_stg0_07_re = {{2{realIn_07[15]}}, realIn_07}; assign wire_stg0_07_im = (MODE == `IFFT) ? {{2{cnjImagIn_07[15]}}, cnjImagIn_07} : {{2{imagIn_07[15]}}, imagIn_07};
 
 // Module Instantiation
 // Stage 1 
