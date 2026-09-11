@@ -16,7 +16,7 @@ x[n] = \text{IFFT}(X[k]) = \frac{1}{N}\ \overline{\text{FFT}(X[k])}
 $$
 
 To run the program, use the following command.
-```
+```Bash
 verilator --cc --exe --build -Wno-fatal --top-module CombinedFFT16b CombinedFFT16b.v CombinedFFT16b_tb.cpp -o sim
 ./obj_dir/sim
 ```
