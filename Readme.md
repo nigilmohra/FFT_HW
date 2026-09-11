@@ -23,7 +23,7 @@ verilator --cc --exe --build -Wno-fatal --top-module CombinedFFT16b CombinedFFT1
 ./obj_dir/sim
 ```
 
-|<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/d5cb210b-9f1b-45f8-a73b-98bb124b2203" />|
+|<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/ed58bb76-5837-4b96-a5e5-e2b29689588b" />|
 |:------:|
 | _Figure 1. Successful Execution of 8-PPT Combined Forward and Inverse FFT Using Verilator_ |
 
