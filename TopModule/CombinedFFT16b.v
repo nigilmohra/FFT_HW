@@ -28,10 +28,10 @@ assign diffReal = inReal_A - inReal_B;
 assign diffImag = inImag_A - inImag_B;
 
 // Divide by 2
-assign outReal_X = (MODE == `IFFT) ? {1'b0, (sumReal  >>> 1)} : {1'b0, sumReal};
-assign outImag_X = (MODE == `IFFT) ? {1'b0, (sumImag  >>> 1)} : {1'b0, sumImag};
-assign outReal_Y = (MODE == `IFFT) ? {1'b0, (diffReal >>> 1)} : {1'b0, diffReal};
-assign outImag_Y = (MODE == `IFFT) ? {1'b0, (diffImag >>> 1)} : {1'b0, diffImag};
+assign outReal_X = (MODE == `IFFT) ? (sumReal  >>> 1) : sumReal;
+assign outImag_X = (MODE == `IFFT) ? (sumImag  >>> 1) : sumImag;
+assign outReal_Y = (MODE == `IFFT) ? (diffReal >>> 1) : diffReal;
+assign outImag_Y = (MODE == `IFFT) ? (diffImag >>> 1) : diffImag;
 endmodule
 
 // Sub-Module : Butterfly with W1 and W3 Twiddle Operations
