@@ -15,8 +15,10 @@
 
 typedef std::complex<double> cplx;
 
-static const int N       = 8;    // FFT/IFFT point size
-static const int NUM_VEC = 100;  // number of test vectors, same as tb_AES
+// FFT/IFFT Point Size
+static const int N = 8;    
+// Number of Test Vectors
+static const int NUM_VEC = 100; 
 
 // Device Under Test
 VCombinedFFT16b* DUT;
