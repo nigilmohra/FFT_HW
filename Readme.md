@@ -23,6 +23,8 @@ verilator --cc --exe --build -Wno-fatal --top-module CombinedFFT16b CombinedFFT1
 ./obj_dir/sim
 ```
 
+The design has a tolerance of up to 5 LSB. The maximum error observed was approximately 2.5–2.6 LSB.
+
 |<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/ed58bb76-5837-4b96-a5e5-e2b29689588b" />|
 |:------:|
 | _Figure 1. Successful Execution of 8-PPT Combined Forward and Inverse FFT Using Verilator_ |
