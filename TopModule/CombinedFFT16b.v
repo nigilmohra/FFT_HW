@@ -7,7 +7,7 @@
 `define FFT  1'b0
 `define IFFT 1'b1
 
-// Sub-Module : Buttterfly with W0 and W2 Twiddle Operations
+// Sub-Module : Butterfly with W0 and W2 Twiddle Operations
 module bflyOpW02 (
     input wire MODE,
     input  wire signed [17:00] inReal_A, inImag_A,
