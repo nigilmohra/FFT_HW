@@ -4,11 +4,11 @@ This repository contains a 16-bit fixed-point Verilog implementation of a combin
 ## Equations
 
 $$
-X[k] = \sum_{n=0}^{N-1} x[n] \, e^{-j\frac{2\pi}{N}kn}, \qquad k = 0, 1, \dots, N-1
+X[k] = \sum_{n=0}^{N-1} x[n] \ e^{-j\frac{2\pi}{N}kn}, \qquad k = 0, 1, \dots, N-1
 $$
 
 $$
-x[n] = \frac{1}{N}\sum_{k=0}^{N-1} X[k] \, e^{+j\frac{2\pi}{N}kn}, \qquad n = 0, 1, \dots, N-1
+x[n] = \frac{1}{N}\sum_{k=0}^{N-1} X[k] \ e^{+j\frac{2\pi}{N}kn}, \qquad n = 0, 1, \dots, N-1
 $$
 
 $$
