@@ -15,4 +15,8 @@ $$
 x[n] = \text{IFFT}(X[k]) = \frac{1}{N}\ \overline{\text{FFT}(X[k])}
 $$
 
+|<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/27ae9361-0af7-4036-8b04-055e427c7a4b" />|
+|:------:|
+| _Figure 1. Successful Execution of 8-PPT Combined Forward and Inverse FFT Using Verilator_ |
+
 **This work was carried out as part of my internship at the Indian Institute of Technology Delhi (IIT Delhi), under the guidance and supervision of Prof. Kaushik Saha (Department of Electrical Engineering) and Prof. Rakesh Kumar Palani (Department of Electrical Engineering)**.
