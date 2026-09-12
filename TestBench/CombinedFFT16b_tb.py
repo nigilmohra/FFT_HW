@@ -23,12 +23,10 @@ passCount = {0: 0, 1: 0}   # MODE: 0 = FFT, 1 = IFFT
 failCount = {0: 0, 1: 0}
 count_i   = 0
 
-
 # Sign Extend Output
 def toSigned16(value):
     value = int(value) & 0xFFFF
     return value - 0x10000 if value & 0x8000 else value
-
 
 # Load Vectors
 def loadVectors():
@@ -38,7 +36,6 @@ def loadVectors():
         inVec[v]      = x
         expFFTOut[v]  = np.fft.fft(x)
         expIFFTOut[v] = np.fft.ifft(x)
-
 
 # Drive Inputs
 def driveInputs(dut, x):
@@ -65,7 +62,6 @@ def readOutputs(dut):
         complex(toSigned16(dut.realOut_07.value), toSigned16(dut.imagOut_07.value)),
     ]
 
-
 # Run Vector
 async def runVector(dut, idx, mode):
     dut.MODE.value = mode
@@ -80,7 +76,6 @@ async def runVector(dut, idx, mode):
         passCount[mode] = passCount[mode] + 1
     else:
         failCount[mode] = failCount[mode] + 1
-
 
 # Main
 @cocotb.test()
@@ -99,7 +94,6 @@ async def testModule(dut):
 
     assert failCount[0] == 0, f"FFT : {failCount[0]} Failures"
     assert failCount[1] == 0, f"IFFT: {failCount[1]} Failures"
-
 
 # Run Test
 if __name__ == "__main__":
