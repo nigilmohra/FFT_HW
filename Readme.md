@@ -17,7 +17,7 @@ $$
 
 The design has a tolerance of up to 5 LSB. The maximum error observed was approximately 2.5 - 2.6 LSB across 100 test cases for both FFT and IFFT. 
 
-|<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/db804910-0cd2-4768-917e-a1687b51f1fa" />|
+|<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/342b0cb5-d7fe-4782-83e8-1dde6a12c5ce" />|
 |:------:|
 | _Figure 1. Successful Execution of 8-PPT Combined Forward and Inverse FFT Using Verilator_ |
 
